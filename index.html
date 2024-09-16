@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        :root {
+            --primary-color: #008080;
+            --secondary-color: #ffffff;
+            --accent-color: #002147;
+            --highlight-color: #e0ff56;
+            --text-color: #333333;
+            --background-color: #f4f4f4;
+
+            /* Font Variables */
+            --font-primary: 'Arial', sans-serif;
+            --font-secondary: 'Georgia', serif;
+            --font-heading: 'Helvetica Neue', sans-serif;
+            --font-monospace: 'Courier New', monospace;
+            --font-user: 'supfun';
+            --font-hand: 'handmade';
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            height: 100px; /* Adjust height as needed */
+            overflow: hidden;
+        }
+
+        .marquee {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+            color: transparent; /* Makes the text itself transparent */
+            -webkit-text-stroke: 0.2px var(--secondary-color); /* Creates an outline */
+            font-size: 8rem;
+            font-family: var(--font-heading);
+            z-index: 0;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        header h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 2.5rem;
+            font-family: var(--font-heading);
+        }
+
+        .container {
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        section {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            color: var(--accent-color);
+            font-size: 2rem;
+        }
+
+        p {
+            font-family: var(--font-secondary);
+            line-height: 1.6;
+        }
+
+        .team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .team .card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px; /* Fixed width */
+            height: 350px; /* Fixed height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary-color);
+        }
+
+        /* Executive Card Styling */
+        .team .card.executive {
+            border: 2px solid gold; /* Distinct color for executives */
+            background: linear-gradient(45deg, #002147, #4b0082); /* Dynamic gradient background */
+        }
+
+        .team .card.executive .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 50px;
+            height: 50px;
+            background: gold;
+            border-radius: 50%;
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Member Card Styling */
+        .team .card.member {
+            border: 2px solid silver; /* Distinct color for members */
+            background: #ffffff;
+        }
+
+        .team .card.member:hover {
+            border-color: teal;
+            box-shadow: 0 0 10px rgba(0, 128, 128, 0.5); /* Brightens on hover */
+        }
+
+        .team .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Makes the image cover the entire card area */
+            filter: grayscale(100%);
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        .team .card:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+
+        .team .info {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .team .info h3, .team .info p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="marquee">NETWORK OF ADVENTISTS IN TECH (NAIT)</div>
+    <h1>About Us</h1>
+</header>
+
+<div class="container">
+    <section>
+        <h2>Meet the Team</h2>
+        <p>
+            Our team is a group of tech enthusiasts united by Adventist faith, working together to blend innovation with purpose.
+          </p>
+        <div class="team">
+            <div class="card executive">
+                <div class="badge"></div>
+                <img src="/public/ro.jpg" alt="Rono">
+                <div class="info">
+                    <h3>Rono</h3>
+                    <p>Chairperson</p>
+                </div>
+            </div>
+            <div class="card executive">
+                <img src="/public/steve.jpg" alt="Steve">
+                <div class="info">
+                    <h3>Steve</h3>
+                    <p>Organising Secretary</p>
+                </div>
+            </div>
+            <div class="card executive">
+                <img src="/public/bildad.jpg" alt="Bildad">
+                <div class="info">
+                    <h3>Bildad</h3>
+                    <p>Brand Ambassador</p>
+                </div>
+            </div>
+            <div class="card executive">
+                <img src="" alt="Billy">
+                <div class="info">
+                    <h3>Billy</h3>
+                    <p>Project Manager</p>
+                </div>
+            </div>
+            <div class="card executive">
+                <img src="" alt="Peter">
+                <div class="info">
+                    <h3>Peter</h3>
+                    <p>Assistant Project Manager</p>
+                </div>
+            </div>
+            <div class="card executive">
+                <img src="" alt="Edwin">
+                <div class="info">
+                    <h3>Edwin</h3>
+                    <p>Legal Advisor</p>
+                </div>
+            </div>
+            <div class="card member">
+                <img src="/public/omingo.jpg" alt="Omingo">
+                <div class="info">
+                    <h3>Omingo</h3>
+                    <p>Communication</p>
+                </div>
+            </div>
+            <!-- team members -->
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

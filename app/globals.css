@@ -1,0 +1,482 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'supfun';
+  src: url('/fonts/Supfun.otf') format('opentype'); /* Corrected format */
+}
+
+@font-face {
+  font-family: 'handmade';
+  src: url('/fonts/Handmade.otf') format('opentype'); /* Corrected format */
+}
+
+@font-face {
+  font-family: 'stylish';
+  src: url('/fonts/Apalu.ttf') format('opentype'); /* Corrected format */
+}
+:root {
+  --primary-color: #008080;
+  --secondary-color: #ffffff;
+  --accent-color: #002147;
+  --highlight-color: #e0ff56;
+  --text-color: #333333;
+  --background-color: #f4f4f4;
+
+  /* Font Variables */
+  --font-primary: 'Arial', sans-serif;
+  --font-secondary: 'Georgia', serif;
+  --font-heading: 'Helvetica Neue', sans-serif;
+  --font-monospace: 'Courier New', monospace;
+  --font-user: 'supfun';
+  --font-hand: 'handmade';
+  --font-stingo:'stylish';
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--font-primary); /* Corrected font variable */
+  padding-top: 80px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--background-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 10; 
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-family: var(--font-hand); 
+  font-size: 25px;
+}
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-color);
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  transform: scale(1.1); /* Adjust the scale factor as needed */
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Adjust to position the line correctly */
+  left: 0;
+  width: 0;
+  height: 2px; /* Height of the line */
+  background-color: var(--highlight-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::before {
+  width: 100%;
+}
+
+
+.nav-button button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 2px solid var(--accent-color); /* Thin blue border */
+  background-color: transparent; /* Clear background */
+  color: var(--accent-color); /* Blue text color */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto; /* Pushes the button more to the left */
+  margin-right: 30px; /* Adds space between the button and the edge of the screen */
+}
+
+.nav-button button:hover {
+  background-color: var(--accent-color); /* Blue background on hover */
+  color: var(--secondary-color); /* White text on hover */
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: var(--background-color);
+}
+
+.content {
+  max-width: 50%;
+}
+
+.content h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.content p {
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.join {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.join:hover {
+  background-color: var(--highlight-color);
+  transform: scale(1.05);
+}
+
+.learn {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.learn:hover {
+  background-color: var(--highlight-color);
+  transform: scale(1.05);
+}
+
+.image {
+  margin: auto 0;
+  width: 380px;
+  height: 380px;
+  border-radius: 55% 45% 55% 45%;
+  overflow: hidden;
+  animation: imgFloat 7s ease-in-out infinite;
+}
+
+.image img {
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+@keyframes imgFloat {
+  50% {
+    transform: translateY(10px);
+    border-radius: 45% 55% 45% 55%;
+  }
+}
+
+/*team*/
+header {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 20px;
+  margin-top: 10%;
+  text-align: center;
+  position: relative;
+  height: 100px; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+.marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite;
+  color: transparent;
+  -webkit-text-stroke: 0.2px var(--secondary-color); 
+  font-size: 8rem;
+  font-family: var(--font-heading);
+  z-index: 0;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(10%); /* Start completely off-screen to the right */
+  }
+  to {
+    transform: translateX(-10%); /* End completely off-screen to the left */
+  }
+}
+
+
+header h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 2.5rem;
+  font-family: var(--font-heading);
+}
+
+.container {
+  width: 100%;
+  margin: 20px auto;
+}
+
+section {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  color: var(--accent-color);
+  font-size: 2rem;
+}
+
+p {
+  font-family: var(--font-secondary);
+  line-height: 1.6;
+}
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.team .card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px; /* Fixed width */
+  height: 350px; /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-color);
+}
+
+/* Executive Card Styling */
+.team .card.executive {
+  border: 2px solid gold; /* Distinct color for executives */
+  background: linear-gradient(45deg, #002147, #4b0082); /* Dynamic gradient background */
+}
+
+.team .card.executive .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 50px;
+  height: 50px;
+  background: gold;
+  border-radius: 50%;
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+/* Member Card Styling */
+.team .card.member {
+  border: 2px solid silver; /* Distinct color for members */
+  background: #ffffff;
+}
+
+.team .card.member:hover {
+  border-color: teal;
+  box-shadow: 0 0 10px rgba(0, 128, 128, 0.5); /* Brightens on hover */
+}
+
+.team .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Makes the image cover the entire card area */
+  filter: grayscale(100%);
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.team .card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.team .info {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.team .info h3, .team .info p {
+  margin: 0;
+}
+
+
+/*testimonials*/
+
+/*footer*/
+.footer {
+  background-color: var(--secondary-color); /* White background */
+  color: var(--text-color);
+  padding: 2rem;
+  font-family: var(--font-primary);
+  position: relative; /* Position the marquee within the footer */
+  overflow: hidden; /* Ensure marquee stays within the footer boundaries */
+}
+
+.footer-top {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative; /* Stack the content on top of the marquee */
+  z-index: 2; /* Ensure the footer content is on top */
+}
+
+.footer-top h2 {
+  font-family: var(--font-heading);
+  color: var(--accent-color);
+}
+
+.footer-top p {
+  color: var(--text-color);
+  margin: 1rem 0;
+}
+
+.cta-button {
+  background-color: var(--highlight-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: var(--accent-color);
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  position: relative; /* Stack the content on top of the marquee */
+  z-index: 2; /* Ensure the footer content is on top */
+}
+
+.footer-section h3 {
+  font-family: var(--font-user);
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.footer-section h4 {
+  font-family: var(--font-hand);
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.footer-legal {
+  text-align: center;
+  border-top: 1px solid var(--text-color);
+  padding-top: 1rem;
+  position: relative; /* Stack the content on top of the marquee */
+  z-index: 2; /* Ensure the footer content is on top */
+}
+
+.footer-legal p {
+  margin: 0;
+}
+
+.footer-legal a {
+  color: var(--accent-color);
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons i {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.social-icons i:hover {
+  color: var(--accent-color);
+}
+
+/* Media query for screens with max width of 945px */
+@media (max-width: 945px) {
+  .hero {
+    flex-direction: column-reverse; /* Reverses the order so that the image comes on top */
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .image {
+    margin: 20px auto;
+  }
+}
