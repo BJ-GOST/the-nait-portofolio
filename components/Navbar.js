@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 function Navbar() {
   return (
     <nav className='navbar'>
       <div className="logo">
-        <img src="/logo.png" alt="logo" />
+        <Image src='/logo.png' alt='logo' height={20} width={20}/>
       </div>
 
       <div className='nav-links'>
