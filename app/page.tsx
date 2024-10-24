@@ -33,7 +33,7 @@ export default function Home() {
       <footer className="footer">
         <div className="footer-top">
           <h2>Want to partner with us?</h2>
-          <p>If you're interested in our partnership and would like to find out some more information, one of our advisors is excited to help.</p>
+          <p>If you&apos;re interested in our partnership and wish to learn more, one of our advisors is excited to help.</p>
           <button className="cta-button">Begin Now</button>
         </div>
         <div className="footer-bottom">
